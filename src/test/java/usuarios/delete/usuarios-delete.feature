@@ -1,6 +1,7 @@
 Feature: Eliminar un usuario de reqres
 
   Scenario: Eliminar un usuario
-    Given url "https://reqres.in/" + "api/users/" + "2"
+    * call read("../post/usuarios-post.feature@CrearUsuario")
+    Given url "https://reqres.in/" + "api/users/" + idUsuario
     When method delete
     Then status 204

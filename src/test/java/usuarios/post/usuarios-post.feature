@@ -20,3 +20,10 @@ Feature: Crear un usuario de reqres
     And request { "name": "Alberto" }
     When method post
     Then status 201
+
+  @CrearUsuario
+  Scenario: Crear un usuario para eliminar
+    And request { "name": "Enrique", "job": "Doctor" }
+    When method post
+    Then status 201
+      And def idUsuario = $.id
